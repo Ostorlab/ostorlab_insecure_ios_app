@@ -21,4 +21,4 @@ jobs:
 
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
-        run: flutter build ipa --no-sound-null-safety
+        run: flutter build ipa --no-sound-null-safety --no-codesign
