@@ -1,0 +1,24 @@
+name: Ios test
+on:
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # - name: Install Flutter
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.7.12"
+          channel: 'stable'
+
+      - name: Get dependencies
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter pub get
+
+      - name: Start IPA build
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter build ipa --no-sound-null-safety --no-codesign
