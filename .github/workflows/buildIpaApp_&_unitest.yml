@@ -19,6 +19,10 @@ jobs:
         working-directory: ostorlab_insecure_flutter_app
         run: flutter pub get
 
+      - name: Run Flutter Unitest
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter test lib/tests/ --reporter=github --no-sound-null-safety 
+
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
         run: flutter build ipa --no-sound-null-safety --no-codesign
