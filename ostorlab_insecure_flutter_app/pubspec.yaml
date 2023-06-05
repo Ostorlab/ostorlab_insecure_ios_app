@@ -33,7 +33,7 @@ dependencies:
   flutter_inappwebview: ^5.7.2+3
   flutter_android: ^0.8.0
   reflectable: any
-  build_runner: any
+  build_runner: ^2.3.3
   built_value_generator: any
 
   # The following adds the Cupertino Icons font to your application.
@@ -41,6 +41,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   convert: ^3.1.1
   local_auth: ^2.1.6
+  sqflite_common_ffi: ^2.2.5
+  mockito: ^5.4.0
 
 dev_dependencies:
   flutter_test:

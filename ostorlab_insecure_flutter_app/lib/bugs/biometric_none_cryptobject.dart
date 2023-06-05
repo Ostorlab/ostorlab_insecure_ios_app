@@ -9,7 +9,6 @@ class BiometricNoneCryptObject extends BugRule {
       'Use Biometric authentication without a crypto Object.';
 
   Future<void> run() async {
-    WidgetsFlutterBinding.ensureInitialized();
     // Initialising an instance of the localAuthentication.
     final LocalAuthentication localAuthentication = LocalAuthentication();
 
