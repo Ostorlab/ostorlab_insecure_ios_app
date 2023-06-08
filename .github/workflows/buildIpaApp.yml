@@ -29,9 +29,8 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v1
-        working-directory: ostorlab_insecure_flutter_app
         with:
           tag_name: android-v3-${{env.SNAPSHOT_HASH}}
           files: |
-            lib/*.dart
-            /build/ios/ipa/*
+            ostorlab_insecure_flutter_app/lib/*.dart
+            ostorlab_insecure_flutter_app/build/ios/ipa/*
