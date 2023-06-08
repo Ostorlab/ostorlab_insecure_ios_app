@@ -25,3 +25,12 @@ jobs:
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
         run: flutter build ipa --no-sound-null-safety --no-codesign
+
+      -name: Release
+        working-directory: ostorlab_insecure_flutter_app
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: android-v3-${{env.SNAPSHOT_HASH}}
+          files: |
+            lib/*.dart
+            /build/ios/ipa/*
