@@ -3,11 +3,12 @@ on:
   pull_request:
     branches: [ "*" ]
 
+permissions: read-all | write-all
+
 jobs:
   test:
     runs-on: macos-latest
 
-    permissions: read-all
 
     steps:
       - uses: actions/checkout@v3
@@ -36,4 +37,4 @@ jobs:
           tag_name: ios-v0.0.1
           files: |
             ostorlab_insecure_flutter_app/lib/*.dart
-            ostorlab_insecure_flutter_app/build/ios/ipa/*
+            build/ios/ipa/*
