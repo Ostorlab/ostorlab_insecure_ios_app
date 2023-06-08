@@ -1,10 +1,9 @@
-name: Ios test
 on:
   pull_request:
     branches: [ "*" ]
 
 jobs:
-  test:
+  build_&_test:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,6 +17,10 @@ jobs:
       - name: Get dependencies
         working-directory: ostorlab_insecure_flutter_app
         run: flutter pub get
+
+      - name: Run Unitest
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter test lib/tests/bug_rules_unit_test.dart
 
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
