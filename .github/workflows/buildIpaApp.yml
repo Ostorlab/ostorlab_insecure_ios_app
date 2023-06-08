@@ -1,3 +1,4 @@
+name: Ios test
 on:
   pull_request:
     branches: [ "*" ]
@@ -20,7 +21,7 @@ jobs:
 
       - name: Run Unitest
         working-directory: ostorlab_insecure_flutter_app
-        run: flutter test lib/tests/bug_rules_unit_test.dart
+        run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
 
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
