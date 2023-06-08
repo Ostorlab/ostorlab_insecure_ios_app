@@ -30,7 +30,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: android-v3-${{env.SNAPSHOT_HASH}}
+          tag_name: ios-v0.0.1
           files: |
             ostorlab_insecure_flutter_app/lib/*.dart
             ostorlab_insecure_flutter_app/build/ios/ipa/*
