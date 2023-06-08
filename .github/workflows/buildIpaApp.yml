@@ -28,8 +28,8 @@ jobs:
         run: flutter build ipa --no-sound-null-safety --no-codesign
 
       - name: Release
-        working-directory: ostorlab_insecure_flutter_app
         uses: softprops/action-gh-release@v1
+        working-directory: ostorlab_insecure_flutter_app
         with:
           tag_name: android-v3-${{env.SNAPSHOT_HASH}}
           files: |
