@@ -8,7 +8,6 @@ import '../bugs/hardcoded_creds_in_url.dart';
 import '../bugs/hash_call.dart';
 import '../bugs/insecure_commands.dart';
 import '../bugs/insecure_random.dart';
-import '../bugs/intent_call.dart';
 import '../bugs/oracle_padding.dart';
 import '../bugs/path_traversal.dart';
 import '../bugs/reflection_api.dart';
@@ -83,14 +82,6 @@ void main() {
 
     expect(rule.description,
         "The application uses insecure random number generators, which can lead to security vulnerabilities and should be replaced with cryptographically secure alternatives.");
-  });
-
-  test('IntentCall() executes correctly', () async {
-    final rule = IntentCall();
-    await rule.run();
-
-    expect(
-        rule.description, "The application broadcasts data through an intent");
   });
 
   test('OraclePadding() executes correctly', () async {
