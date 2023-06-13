@@ -39,7 +39,7 @@ void main() {
 
   test('CommandExec() executes correctly', () async {
     final rule = CommandExec();
-    await rule.run("fuzz://Aa0Aa1Aa2Aa3");
+    await rule.run("ls");
 
     expect(rule.description, "The application executes commands");
   });
@@ -70,7 +70,7 @@ void main() {
 
   test('InsecureCommands() executes correctly', () async {
     final rule = InsecureCommands();
-    await rule.run("fuzz://Aa0Aa1Aa2Aa3");
+    await rule.run("ls");
 
     expect(rule.description,
         "The application executes commands from an external storage");
@@ -86,7 +86,7 @@ void main() {
 
   test('OraclePadding() executes correctly', () async {
     final rule = OraclePadding();
-    await rule.run("fuzz://Aa0Aa1Aa2Aa3");
+    await rule.run("Q/oIqgN2MgTZu2EL3yTDWQ==");
 
     expect(
         rule.description, "This bug rule uses CBC insecure encryption mode.");

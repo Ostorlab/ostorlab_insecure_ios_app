@@ -14,12 +14,11 @@ class InsecureCommands extends BugRule {
   /// Trigger the [BugRule]
   @override
   Future<void> run(String input) async {
-    await executeCommand(input, '/sdcard/test.json');
+    await executeCommand(input);
   }
 
   /// Execute a command from the given directory path.
-  Future<void> executeCommand(String command, String pathName) async {
-    final file = Directory(pathName);
-    await Process.run(command, [], workingDirectory: file.path);
+  Future<void> executeCommand(String command) async {
+    await Process.run(command, []);
   }
 }

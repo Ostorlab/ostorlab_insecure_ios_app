@@ -15,7 +15,7 @@ class CommandExec extends BugRule {
   @override
   Future<void> run(String input) async {
     // command contains chmod
-    final command = "chmod 777 $input";
+    final command = "chmod 777 /sdcard/document.pdf";
     await executeCommand(command, "/sdcard");
   }
 
