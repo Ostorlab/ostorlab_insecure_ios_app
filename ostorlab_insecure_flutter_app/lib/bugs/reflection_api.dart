@@ -15,11 +15,12 @@ class ReflectionApi extends BugRule {
   String get description => 'call to reflectable to invoke method';
 
   @override
-  Future<void> run() async {
+  Future<void> run(String input) async {
     initializeReflectable();
     var instance = Reflectee();
     var instanceMirror = myReflectable.reflect(instance);
-    instanceMirror.invoke('reflecteeMethod', [10]);
+    // instanceMirror.invoke('reflecteeMethod', [10]);
+    instanceMirror.invoke(input, [10]);
   }
 }
 
