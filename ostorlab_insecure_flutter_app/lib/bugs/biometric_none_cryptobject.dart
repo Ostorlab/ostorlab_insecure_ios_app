@@ -8,7 +8,7 @@ class BiometricNoneCryptObject extends BugRule {
 
   String get description => 'Use Biometric authentication without a crypto Object.';
 
-  Future<void> run() async {
+  Future<void> run(String input) async {
     // Initialising an instance of the localAuthentication.
     final LocalAuthentication localAuthentication = LocalAuthentication();
 

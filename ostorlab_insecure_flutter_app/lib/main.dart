@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uni_links/uni_links.dart';
+import 'package:flutter/services.dart' show PlatformException;
 
 import 'package:ostorlab_insecure_flutter_app/bug_rule_caller.dart';
 import 'package:ostorlab_insecure_flutter_app/bugs/command_exec.dart';
@@ -49,12 +51,29 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late TextEditingController _controller;
   String _output = '';
+  String _initialLink = 'Unknown';
 
   @override
   void initState() {
     super.initState();
     _controller = TextEditingController(text: _output);
+    _initUniLinks();
     _runAll();
+  }
+
+  Future<void> _initUniLinks() async {
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      final link = await getInitialLink();
+      if (link != null) {
+        _initialLink = link;
+      }
+      // Parse the link and warn the user, if it is not correct,
+      // but keep in mind it could be `null`.
+    } on PlatformException {
+      // Handle exception by warning the user their action did not succeed
+      // return?
+    }
   }
 
   void _runAll() async {
@@ -82,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
     caller.addRule(ReflectionApi());
 
     try {
-      await caller.callRules();
+      await caller.callRules(_initialLink);
       _output += await caller.listBugRules();
     } catch (e) {
       _output += e.toString();
