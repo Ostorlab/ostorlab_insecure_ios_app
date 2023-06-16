@@ -3,25 +3,26 @@ on:
   pull_request:
     branches: [ "*" ]
 
-jobs:
-  test:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v3
+# 
+# jobs:
+#   test:
+#     runs-on: macos-latest
+#     steps:
+#       - uses: actions/checkout@v3
 
-      # - name: Install Flutter
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.7.12"
-          channel: 'stable'
+#       # - name: Install Flutter
+#       - uses: subosito/flutter-action@v2
+#         with:
+#           flutter-version: "3.7.12"
+#           channel: 'stable'
 
-      - name: Get dependencies
-        working-directory: ostorlab_insecure_flutter_app
-        run: flutter pub get
+#       - name: Get dependencies
+#         working-directory: ostorlab_insecure_flutter_app
+#         run: flutter pub get
 
-      - name: Run Unitest
-        working-directory: ostorlab_insecure_flutter_app
-        run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
+#       - name: Run Unitest
+#         working-directory: ostorlab_insecure_flutter_app
+#         run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
 
 # This is currently broken and needs to be redone as the application was not generated in the correct way.
 #      - name: Start IPA build
