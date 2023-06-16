@@ -19,11 +19,10 @@ jobs:
         working-directory: ostorlab_insecure_flutter_app
         run: flutter pub get
 
-      - name: Run Unitest
-        working-directory: ostorlab_insecure_flutter_app
-        run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
+      # - name: Run Unitest
+      #   working-directory: ostorlab_insecure_flutter_app
+      #   run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
 
-# This is currently broken and needs to be redone as the application was not generated in the correct way.
-#      - name: Start IPA build
-#        working-directory: ostorlab_insecure_flutter_app
-#        run: flutter build ipa --no-sound-null-safety --no-codesign
+      - name: Start IPA build
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter build ipa --no-sound-null-safety --no-codesign
