@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [ "*" ]
 
-# 
+# this Pr contains a new and empty project
 # jobs:
 #   test:
 #     runs-on: macos-latest
