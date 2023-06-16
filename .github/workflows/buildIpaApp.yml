@@ -2,27 +2,27 @@ name: Ios test
 on:
   pull_request:
     branches: [ "*" ]
-# this app is incomplete in this PR
-# jobs:
-#   test:
-#     runs-on: macos-latest
-#     steps:
-#       - uses: actions/checkout@v3
 
-#       # - name: Install Flutter
-#       - uses: subosito/flutter-action@v2
-#         with:
-#           flutter-version: "3.7.12"
-#           channel: 'stable'
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
 
-#       - name: Get dependencies
-#         working-directory: ostorlab_insecure_flutter_app
-#         run: flutter pub get
+      # - name: Install Flutter
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.7.12"
+          channel: 'stable'
 
-#       - name: Run Unitest
-#         working-directory: ostorlab_insecure_flutter_app
-#         run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
+      - name: Get dependencies
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter pub get
 
-#      - name: Start IPA build
-#        working-directory: ostorlab_insecure_flutter_app
-#        run: flutter build ipa --no-sound-null-safety --no-codesign
+      - name: Run Unitest
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
+
+     - name: Start IPA build
+       working-directory: ostorlab_insecure_flutter_app
+       run: flutter build ipa --no-sound-null-safety --no-codesign
