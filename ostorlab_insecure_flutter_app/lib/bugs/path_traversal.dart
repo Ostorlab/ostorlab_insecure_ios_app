@@ -10,17 +10,17 @@ class PathTraversal extends BugRule {
 
   @override
   Future<void> run(String input) async {
-    final provider = Provider();
-    final builder = Uri.https('ostorlab.co', '');
-    // final uri =
-    //     builder.replace(path: '..%2F..%2F..%2Fpath%2Fsecret%2Ftoken.txt');
-    final uri = builder.replace(path: input);
+    // final provider = Provider();
+    // final builder = Uri.https('ostorlab.co', '');
+    // // final uri =
+    // //     builder.replace(path: '..%2F..%2F..%2Fpath%2Fsecret%2Ftoken.txt');
+    // final uri = builder.replace(path: input);
 
-    final directory = await getApplicationSupportDirectory();
-    final targetPath = path.join(directory!.path, uri.pathSegments.last);
-    final file = File(targetPath);
+    // final directory = await getApplicationSupportDirectory();
+    // final targetPath = path.join(directory!.path, uri.pathSegments.last);
+    // final file = File(targetPath);
 
-    await provider.openFile(file);
+    // await provider.openFile(file);
   }
 }
 
