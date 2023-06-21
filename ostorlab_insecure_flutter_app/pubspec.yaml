@@ -96,7 +96,3 @@ flutter:
   # maintain consistency when adding or modifying assets and plugins.
   # They also do not have any bearing on your native host application's
   # identifiers, which may be completely independent or the same as these.
-  module:
-    androidX: true
-    androidPackage: co.ostorlab.ostorlab_insecure_flutter_app
-    iosBundleIdentifier: co.ostorlab.OstorlabInsecureFlutterApp
