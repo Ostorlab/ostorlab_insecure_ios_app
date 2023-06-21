@@ -23,16 +23,6 @@ jobs:
         working-directory: ostorlab_insecure_flutter_app
         run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
 
-      # - name: Generate necessary files
-      #   working-directory: ostorlab_insecure_flutter_app/ios
-      #   run: |
-      #   flutter pub update
-      #   flutter run
-        
-      - name: Flutter Doctor
-        working-directory: ostorlab_insecure_flutter_app
-        run: flutter doctor
-
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
         run: flutter build ipa --no-sound-null-safety --no-codesign
