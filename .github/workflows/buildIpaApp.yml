@@ -24,8 +24,8 @@ jobs:
         run: flutter test lib/tests/bug_rules_unit_test.dart --reporter=github --no-sound-null-safety
 
       - name: Generate necessary files
-        working-directory: ostorlab_insecure_flutter_app
-        run: flutter run
+        working-directory: ostorlab_insecure_flutter_app/ios
+        run: pod init
 
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
