@@ -25,7 +25,13 @@ jobs:
 
       - name: Generate necessary files
         working-directory: ostorlab_insecure_flutter_app/ios
-        run: pod init
+        run: |
+        flutter pub update
+        flutter run
+        
+      - name: Flutter Doctor
+        working-directory: ostorlab_insecure_flutter_app/ios
+        run: flutter doctor
 
       - name: Start IPA build
         working-directory: ostorlab_insecure_flutter_app
