@@ -69,3 +69,34 @@ are not responsible for any misuse or damage caused by this program.
 ## Contribution
 Contributions are always welcome! Please feel free to create issues for bug reports or enhancement suggestions, and make
 pull requests to improve the application.
+
+# Building and Installing the App
+Follow these steps to build and install the Ostorlab Insecure ios App:
+## Prerequisites
+* [Flutter SDK](https://flutter.dev/docs/get-started/install)
+* [Xcode](https://developer.apple.com/xcode/)
+
+## Building the App
+1. Clone the repository.
+Clone the repository: Run the following command in your terminal or command prompt to clone the repository to your local machine:
+```bash
+git clone https://github.com/Ostorlab/ostorlab_insecure_ios_app
+```
+2. Navigate to the Flutter project: Change directory to the ostorlab_insecure_ios_app directory within the cloned repository:
+```bash
+cd ostorlab_insecure_flutter_app  
+```
+3. Get Flutter dependencies: Run the following command to fetch the required dependencies for the Flutter project:
+```bash
+flutter pub get
+```
+4. Build the Flutter project: Run the following command to build the Flutter project:
+```bash
+flutter build ios
+```
+5. Open the project in Xcode: Run the following command to open the project in Xcode:
+```bash
+open ios/Runner.xcworkspace
+```
+6. Select a development team: In Xcode, select a development team to use for provisioning the app. To do this, select a team from the Signing & Capabilities tab of the Runner project.
+7. Build and run the app: In Xcode, click the Run button to build and run the app on your iOS device or emulator.
