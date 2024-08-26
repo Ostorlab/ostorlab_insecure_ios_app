@@ -1,0 +1,34 @@
+name: Periodic Scan
+on:
+  schedule:
+    cron: * * * * *
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.7.12"
+          channel: 'stable'
+
+      - name: Install dependencies
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter pub get
+
+      - name: Build IPA
+        working-directory: ostorlab_insecure_flutter_app
+        run: flutter build ipa --no-sound-null-safety --no-codesign
+
+
+      - name: Start Scan
+        uses: Ostorlab/ostorlab_actions@v1.1.1
+        with:
+          scan_profile: full_scan
+          asset_type: ios-ipa
+          scan_title: Periodic_Insecure_ipa
+          target: ios/build/IPA/*.ipa
+          ostorlab_api_key: ${{ secrets.ostorlab_api_key }}
